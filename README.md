@@ -7,6 +7,7 @@ Share my shell
 
 ### Requirements ###
 * bash
+* curl
 * xclip(Auto save image url in Clipboard)
 
 ### How to use ###
