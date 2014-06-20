@@ -1,6 +1,9 @@
 Share my shell
 ==============
 
+# open.sh #
+bash shell
+
 ## No.1 clbin.sh ##
 * quick upload screen shot.
 * Useful at irc channel and any message.
@@ -15,5 +18,15 @@ Share my shell
 * Run this by any way you like.
 * Ctrl+V to any where you want share.
 * You can add the picture name as $1.
+
+# open.py #
+python shell
+
+## No.1 su_Format.py ##
+* out put out.csv line start with 0.00 add by su_Format.py.
+* A example about fill read and write.
+
+### Requirements ###
+* python2 (recommend 2.7.6)
 
 
