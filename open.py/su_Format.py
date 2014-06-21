@@ -18,7 +18,7 @@ with open('out.csv', 'a') as save:
         for dw in range(1, 8):
             for dt in range(1, 5):
                 index = "%i%i" % (dw, dt)
-                if index in i_dict[cid].keys():
+                if index in i_dict[cid]:
                     default = i_dict[cid][index]
                 else:
                     default = '0.00'
