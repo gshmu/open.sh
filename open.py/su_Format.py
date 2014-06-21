@@ -14,15 +14,14 @@ print 'i_dict complete finished'
 with open('out.csv', 'w'):
     print 'f.truncate():just clear'
 with open('out.csv', 'a') as save:
-    for cid in i_dict.keys():
+    for cid in sorted(i_dict.keys(), key=int):
         for dw in range(1, 8):
             for dt in range(1, 5):
-                index = i_dict[cid].keys()
-                default = '0.00'
-                for k in index:
-                    if k == "%s%s" % (dw, dt):
-                        default = i_dict[cid][k]
-                        break
-                print "%5s  %3s  %s%s" % (default, cid, dw, dt)
-                save.write("%s  %s  %s%s\n" % (default, cid, dw, dt))
+                index = "%i%i" % (dw, dt)
+                if index in i_dict[cid].keys():
+                    default = i_dict[cid][index]
+                else:
+                    default = '0.00'
+                # print "%5s  %3s  %s" % (default, cid, index)
+                save.write("%s  %s  %s\n" % (default, cid, index))
 print 'Enjoy yourself'
