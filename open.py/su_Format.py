@@ -5,7 +5,7 @@ __author__ = 'mhohai'
 with open('6-20.csv', 'rb') as f:
     data = f.readlines()[1:]
 i_dict = {}
-for n in range(1, len(data)):
+for n in xrange(1, len(data)):
     line = data[n].split(',')
     i_dict.setdefault(line[2], {})
     i_dict[line[2]].setdefault("%s%s" % (line[3], line[4].strip()), line[0])
@@ -15,8 +15,8 @@ with open('out.csv', 'w'):
     print 'f.truncate():just clear'
 with open('out.csv', 'a') as save:
     for cid in sorted(i_dict.keys(), key=int):
-        for dw in range(1, 8):
-            for dt in range(1, 5):
+        for dw in xrange(1, 8):
+            for dt in xrange(1, 5):
                 index = "%i%i" % (dw, dt)
                 if index in i_dict[cid]:
                     default = i_dict[cid][index]
