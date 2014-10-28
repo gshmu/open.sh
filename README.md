@@ -6,7 +6,7 @@ bash shell
 
 ## No.1 clbin.sh ##
 * quick upload screen shot.
-* Useful at irc channel and any message.
+* Useful at irc channel and any internet text message.
 
 ### Requirements ###
 * bash
@@ -24,7 +24,7 @@ python shell
 
 ## No.1 su_Format.py ##
 * out put out.csv line start with 0.00 add by su_Format.py.
-* A example about fill read and write.
+* A example about file read and write.
 
 ### Requirements ###
 * python2 (recommend 2.7.6)
