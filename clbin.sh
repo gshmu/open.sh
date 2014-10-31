@@ -13,12 +13,15 @@ else
 	png=`ls -rt | tail -1`
 fi
 
-if [ -d ${png} ]; then
+if [ -d "${png}" ]; then
     notify-send "Bad folder name!!!"
-elif [ -f ${png} ]; then
+elif [ -f "${png}" ]; then
+    notify-send "CURL it's working now..."
     url=`curl -F "clbin=@${png}" https://clbin.com`
     # Require:sudo apt-get install xclip
     echo ${url} | xclip -sel clip
     notify-send "Done ${url}"
+    
+    echo ${url} ${png} >> clbin_sync.log
 fi
 # Thanks https://clbin.com
