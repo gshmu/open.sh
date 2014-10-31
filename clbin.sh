@@ -1,5 +1,5 @@
 #!/bin/bash
-# version:0.2
+# version:0.3
 # author:mhohai
 
 # quick upload screen shot
@@ -12,8 +12,13 @@ else
 	# gnome-screenshot -a
 	png=`ls -rt | tail -1`
 fi
-url=`curl -F "clbin=@$png" https://clbin.com`
-# Require:sudo apt-get install xclip
-echo $url | xclip -sel clip
-notify-send "Done $url"
+
+if [ -d ${png} ]; then
+    notify-send "Bad folder name!!!"
+elif [ -f ${png} ]; then
+    url=`curl -F "clbin=@${png}" https://clbin.com`
+    # Require:sudo apt-get install xclip
+    echo ${url} | xclip -sel clip
+    notify-send "Done ${url}"
+fi
 # Thanks https://clbin.com
