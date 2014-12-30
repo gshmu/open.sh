@@ -22,6 +22,6 @@ elif [ -f "${png}" ]; then
     echo ${url} | xclip -sel clip
     notify-send "Done ${url}"
     
-    echo ${url} ${png} >> clbin_sync.log
+    echo ${url} ${png} >> clbin_sync.log && touch "${png}"
 fi
 # Thanks https://clbin.com
