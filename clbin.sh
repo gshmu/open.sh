@@ -17,7 +17,7 @@ if [ -d "${png}" ]; then
     notify-send "Bad folder name!!!"
 elif [ -f "${png}" ]; then
     notify-send "CURL it's working now..."
-    url=`curl -F "clbin=@${png}" https://clbin.com`
+    url=`curl -k -F "clbin=@${png}" https://clbin.com`
     # Require:sudo apt-get install xclip
     echo ${url} | xclip -sel clip
     notify-send "Done ${url}"
